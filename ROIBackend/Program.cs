@@ -1,4 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using ROIBackend.Models;
+
 var builder = WebApplication.CreateBuilder(args);
+
+//Add database Context
+string connectionString = builder.Configuration.GetConnectionString("ROIDirect");
+builder.Services.AddDbContext<ROI_HR_Management_DBContext>(options => options.UseSqlServer(connectionString));
 
 // Add services to the container.
 
