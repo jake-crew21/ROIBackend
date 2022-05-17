@@ -31,7 +31,8 @@ namespace ROIBackend.Controllers
             return await _context.Departments.ToListAsync();
         }
 
-        // GET: api/v1/Departments/5
+        #region un-needed api access
+        /*// GET: api/v1/Departments/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Department>> GetDepartment(byte id)
         {
@@ -48,7 +49,7 @@ namespace ROIBackend.Controllers
 
             return department;
         }
-
+        
         // PUT: api/v1/Departments/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
@@ -118,6 +119,7 @@ namespace ROIBackend.Controllers
         private bool DepartmentExists(byte id)
         {
             return (_context.Departments?.Any(e => e.DepartmentId == id)).GetValueOrDefault();
-        }
+        }*/
+        #endregion un-needed api access
     }
 }
