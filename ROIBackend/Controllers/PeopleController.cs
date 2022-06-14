@@ -28,7 +28,9 @@ namespace ROIBackend.Controllers
           {
               return NotFound();
           }
-            return await _context.People.ToListAsync();
+          //return await _context.People.ToListAsync();
+          //return 200 OK with all people WITH their assoxiated department
+          return await _context.People.Include("Department").ToListAsync();
         }
 
         // GET: api/People/5
@@ -39,7 +41,8 @@ namespace ROIBackend.Controllers
           {
               return NotFound();
           }
-            var person = await _context.People.FindAsync(id);
+            //var person = await _context.People.FindAsync(id);
+            var person = await _context.People.Include("Department").FirstOrDefaultAsync(p => p.PersonId == id);
 
             if (person == null)
             {
