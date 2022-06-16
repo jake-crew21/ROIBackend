@@ -15,6 +15,6 @@ namespace ROIBackend.Models
         public string? Zip { get; set; }
         public string? Country { get; set; }
 
-        public virtual Department Department { get; set; } = null!;
+        public virtual Department? Department { get; set; }
     }
 }

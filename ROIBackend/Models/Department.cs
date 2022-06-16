@@ -13,6 +13,8 @@ namespace ROIBackend.Models
         public byte DepartmentId { get; set; }
         public string Name { get; set; } = null!;
 
+
+        [System.Text.Json.Serialization.JsonIgnore]
         public virtual ICollection<Person> People { get; set; }
     }
 }
